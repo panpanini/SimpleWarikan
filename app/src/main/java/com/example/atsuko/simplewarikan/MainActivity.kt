@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
             val peopleCount = findViewById<EditText>(R.id.people).text.toString()
 
             findViewById<TextView>(R.id.result).text =
-                    (cost.toInt() / peopleCount.toInt()).toString()
+                    CostCalculator().calculateCost(cost, peopleCount)
         }
     }
 }
