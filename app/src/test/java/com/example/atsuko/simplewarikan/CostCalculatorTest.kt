@@ -1,9 +1,9 @@
 package com.example.atsuko.simplewarikan
 
+import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 
-import org.junit.Assert.*
-import org.junit.Before
 class CostCalculatorTest {
 
     private lateinit var target: CostCalculator
@@ -22,6 +22,14 @@ class CostCalculatorTest {
             expect result = 500
          */
 
+        val cost = "1000"
+        val people = "2"
+        val expect = "500"
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
+
     }
 
     @Test
@@ -31,6 +39,14 @@ class CostCalculatorTest {
             people = "2"
             expect result = ""
          */
+
+        val cost = ""
+        val people = "2"
+        val expect = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
     }
 
     @Test
@@ -41,6 +57,13 @@ class CostCalculatorTest {
             expect result ""
          */
 
+        val cost = "10"
+        val people = "2.5"
+        val expect = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
     }
 
     @Test
@@ -50,6 +73,14 @@ class CostCalculatorTest {
             people = "2"
             expect result "5.25"
          */
+
+        val cost = "10.5"
+        val people = "2"
+        val expect = "5.25"
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
     }
 
     @Test
@@ -59,6 +90,14 @@ class CostCalculatorTest {
             people = "2"
             expect result ""
          */
+
+        val cost = "-10"
+        val people = "2"
+        val expect = ""
+
+        val result = target.calculateCost(cost, people) // -5
+
+        assertEquals(expect, result)
     }
 
     @Test
@@ -68,6 +107,14 @@ class CostCalculatorTest {
             people = "-2"
             expect result ""
          */
+
+        val cost = "10"
+        val people = "-2"
+        val expect = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
     }
 
     @Test
@@ -77,6 +124,14 @@ class CostCalculatorTest {
             people = "2"
             expect result ""
          */
+
+        val cost = "aaa"
+        val people = "2"
+        val expect = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
     }
 
     @Test
@@ -86,6 +141,14 @@ class CostCalculatorTest {
             people = "two"
             expect result ""
          */
+
+        val cost = "10"
+        val people = "two"
+        val expect = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expect, result)
     }
 
 }
