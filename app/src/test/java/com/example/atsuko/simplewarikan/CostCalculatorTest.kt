@@ -1,10 +1,8 @@
 package com.example.atsuko.simplewarikan
 
-import org.junit.Test
-
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
-import kotlin.math.exp
+import org.junit.Test
 
 class CostCalculatorTest {
 
@@ -25,13 +23,6 @@ class CostCalculatorTest {
          */
         check("1000", "2", "500")
     }
-
-//    private fun check(cost: Int, people: Int, expect: Int) {
-//        assertEquals(expect.toString(), calc(cost, people))
-//    }
-//
-//    private fun calc(cost: Int, people: Int) =
-//            target.calculateCost(cost.toString(), people.toString())
 
     private fun check(cost: String, people: String, expect: String) {
         assertEquals(expect, calc(cost, people))
