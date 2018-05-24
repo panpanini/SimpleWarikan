@@ -4,6 +4,8 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.junit.Before
+import kotlin.math.exp
+
 class CostCalculatorTest {
 
     private lateinit var target: CostCalculator
@@ -21,8 +23,22 @@ class CostCalculatorTest {
             people = 2
             expect result = 500
          */
-
+        check("1000", "2", "500")
     }
+
+//    private fun check(cost: Int, people: Int, expect: Int) {
+//        assertEquals(expect.toString(), calc(cost, people))
+//    }
+//
+//    private fun calc(cost: Int, people: Int) =
+//            target.calculateCost(cost.toString(), people.toString())
+
+    private fun check(cost: String, people: String, expect: String) {
+        assertEquals(expect, calc(cost, people))
+    }
+
+    private fun calc(cost: String, people: String) =
+            target.calculateCost(cost, people)
 
     @Test
     fun calculateCost_can_handle_empty_cost() {
@@ -31,6 +47,7 @@ class CostCalculatorTest {
             people = "2"
             expect result = ""
          */
+        check("", "2", "")
     }
 
     @Test
@@ -40,7 +57,7 @@ class CostCalculatorTest {
             people = "2.5"
             expect result ""
          */
-
+        check("10", "2.5", "")
     }
 
     @Test
@@ -50,6 +67,7 @@ class CostCalculatorTest {
             people = "2"
             expect result "5.25"
          */
+        check("10.5", "2", "5.25")
     }
 
     @Test
@@ -59,6 +77,7 @@ class CostCalculatorTest {
             people = "2"
             expect result ""
          */
+        check("-10", "2", "")
     }
 
     @Test
@@ -68,6 +87,7 @@ class CostCalculatorTest {
             people = "-2"
             expect result ""
          */
+        check("10", "-2", "")
     }
 
     @Test
@@ -77,6 +97,7 @@ class CostCalculatorTest {
             people = "2"
             expect result ""
          */
+        check("aaa", "2", "")
     }
 
     @Test
@@ -86,6 +107,7 @@ class CostCalculatorTest {
             people = "two"
             expect result ""
          */
+        check("10", "two", "")
     }
 
 }
