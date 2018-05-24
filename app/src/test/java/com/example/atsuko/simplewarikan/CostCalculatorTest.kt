@@ -21,7 +21,13 @@ class CostCalculatorTest {
             people = 2
             expect result = 500
          */
+        val cost = "1000"
+        val people = "2"
+        val expectedResult = "500"
 
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(result, expectedResult)
     }
 
     @Test
@@ -31,16 +37,31 @@ class CostCalculatorTest {
             people = "2"
             expect result = ""
          */
+
+        val cost = ""
+        val people = "2"
+        val expectedResult = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(result, expectedResult)
     }
 
     @Test
     fun calculate_cost_should_not_handle_partial_people() {
-        /*
-            cost = "10"
-            people = "2.5"
-            expect result ""
-         */
+            /*
+                cost = "10"
+                people = "2.5"
+                expect result ""
+             */
 
+            val cost = "10"
+            val people = "2.5"
+            val expectedResult = ""
+
+            val result = target.calculateCost(cost, people)
+
+        assertEquals(result, expectedResult)
     }
 
     @Test
@@ -48,8 +69,16 @@ class CostCalculatorTest {
         /*
             cost = "10.5"
             people = "2"
-            expect result "5.25"
+            expect result ""
          */
+
+        val cost = "10.5"
+        val people = "2"
+        val expectedResult = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(result, expectedResult)
     }
 
     @Test
@@ -59,6 +88,13 @@ class CostCalculatorTest {
             people = "2"
             expect result ""
          */
+        val cost = "-10"
+        val people = "2"
+        val expectedResult = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expectedResult, result)
     }
 
     @Test
@@ -68,6 +104,13 @@ class CostCalculatorTest {
             people = "-2"
             expect result ""
          */
+        val cost = "10"
+        val people = "-2"
+        val expectedResult = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(result, expectedResult)
     }
 
     @Test
@@ -77,6 +120,13 @@ class CostCalculatorTest {
             people = "2"
             expect result ""
          */
+        val cost = "aaa"
+        val people = "2"
+        val expectedResult = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(result, expectedResult)
     }
 
     @Test
@@ -86,6 +136,13 @@ class CostCalculatorTest {
             people = "two"
             expect result ""
          */
+        val cost = "10"
+        val people = "two"
+        val expectedResult = ""
+
+        val result = target.calculateCost(cost, people)
+
+        assertEquals(expectedResult, result)
     }
 
 }
