@@ -13,8 +13,8 @@ jobs:
       - checkout
 
       - run:
-        name: Download dependencies
-        command: ./gradlew androidDependencies
+          name: Download dependencies
+          command: ./gradlew androidDependencies
       - run:
-        name: build app
-        command: ./gradlew assembleDebug
+          name: build app
+          command: ./gradlew assembleDebug
