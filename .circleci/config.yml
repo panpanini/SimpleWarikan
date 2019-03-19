@@ -21,3 +21,6 @@ jobs:
       - run:
           name: lint checks
           command: ./gradlew lintDebug
+      - run:
+          name: Unit Test
+          command: ./gradlew testDebugUnitTest
